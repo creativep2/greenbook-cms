@@ -1,0 +1,28 @@
+{
+  "node": {
+    "407133c274ebe99fa77699dc5b722a7bb9c429e03e": {
+      "workers": {
+        "app/(payload)/admin/[[...segments]]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Ftrangiakiet%2FDocuments%2FGitHub%2Fgreenbook-cms%2Fsrc%2Fapp%2F(payload)%2Flayout.tsx%22%2C%5B%7B%22id%22%3A%22407133c274ebe99fa77699dc5b722a7bb9c429e03e%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%2C%5B%22%2FUsers%2Ftrangiakiet%2FDocuments%2FGitHub%2Fgreenbook-cms%2Fnode_modules%2F%40payloadcms%2Fnext%2Fdist%2Flayouts%2FRoot%2Findex.js%22%2C%5B%7B%22id%22%3A%226049f2a942e0727be79d7b4ce011c46a75179d849c%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(payload)/admin/[[...segments]]/page": "rsc"
+      }
+    },
+    "6049f2a942e0727be79d7b4ce011c46a75179d849c": {
+      "workers": {
+        "app/(payload)/admin/[[...segments]]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Ftrangiakiet%2FDocuments%2FGitHub%2Fgreenbook-cms%2Fsrc%2Fapp%2F(payload)%2Flayout.tsx%22%2C%5B%7B%22id%22%3A%22407133c274ebe99fa77699dc5b722a7bb9c429e03e%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%2C%5B%22%2FUsers%2Ftrangiakiet%2FDocuments%2FGitHub%2Fgreenbook-cms%2Fnode_modules%2F%40payloadcms%2Fnext%2Fdist%2Flayouts%2FRoot%2Findex.js%22%2C%5B%7B%22id%22%3A%226049f2a942e0727be79d7b4ce011c46a75179d849c%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(payload)/admin/[[...segments]]/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "Pzf+asGbjv7XY0t4EeWkymfdXhd1ut+guizyNhW5Dw8="
+}
