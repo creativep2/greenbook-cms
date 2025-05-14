@@ -1,4 +1,41 @@
 {
+  "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/chunk-3BY5IZJD.js -> ./componentInline-7TPI7ZBC.js": {
+    "id": "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/chunk-3BY5IZJD.js -> ./componentInline-7TPI7ZBC.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_payloadcms_richtext-lexical_dist_exports_client_componentInli-f6d833.js"
+    ]
+  },
+  "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./Component-DOSSWC76.js": {
+    "id": "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./Component-DOSSWC76.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_payloadcms_richtext-lexical_dist_exports_client_Component-DOS-b46f14.js"
+    ]
+  },
+  "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./Component-MBLHTKDK.js": {
+    "id": "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./Component-MBLHTKDK.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_payloadcms_richtext-lexical_dist_exports_client_Component-MBL-49b0e6.js"
+    ]
+  },
+  "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./Field-QFHWUA2L.js": {
+    "id": "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./Field-QFHWUA2L.js",
+    "files": [
+      "static/css/_app-pages-browser_node_modules_payloadcms_richtext-lexical_dist_exports_client_Field-QFHWUA2L_js.css",
+      "static/chunks/_app-pages-browser_node_modules_payloadcms_richtext-lexical_dist_exports_client_Field-QFHWUA2L_js.js"
+    ]
+  },
+  "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./RelationshipComponent-APF3CN47.js": {
+    "id": "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./RelationshipComponent-APF3CN47.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_payloadcms_richtext-lexical_dist_exports_client_RelationshipC-d4237e.js"
+    ]
+  },
+  "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./component-NNKG7K3O.js": {
+    "id": "../node_modules/@payloadcms/richtext-lexical/dist/exports/client/index.js -> ./component-NNKG7K3O.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_payloadcms_richtext-lexical_dist_exports_client_component-NNK-12a0f4.js"
+    ]
+  },
   "../node_modules/@payloadcms/translations/dist/importDateFNSLocale.js -> date-fns/locale/ar": {
     "id": "../node_modules/@payloadcms/translations/dist/importDateFNSLocale.js -> date-fns/locale/ar",
     "files": [

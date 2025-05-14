@@ -13,6 +13,11 @@ import { isSuperAdmin } from './access/isSuperAdmin'
 import type { Config } from './payload-types'
 import { getUserTenantIDs } from './utilities/getUserTenantIDs'
 import { seed } from './seed'
+import { Footer } from './Footer/config'
+import { Header } from './Header/config'
+import { defaultLexical } from '@/fields/defaultLexical'
+import { getServerSideURL } from './utilities/getURL'
+import { Media } from './collections/Media'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -20,23 +25,49 @@ const dirname = path.dirname(filename)
 // eslint-disable-next-line no-restricted-exports
 export default buildConfig({
   admin: {
-    user: 'users',
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+    user: Users.slug,
+    livePreview: {
+      breakpoints: [
+        {
+          label: 'Mobile',
+          name: 'mobile',
+          width: 375,
+          height: 667,
+        },
+        {
+          label: 'Tablet',
+          name: 'tablet',
+          width: 768,
+          height: 1024,
+        },
+        {
+          label: 'Desktop',
+          name: 'desktop',
+          width: 1440,
+          height: 900,
+        },
+      ],
+    },
   },
-  collections: [Pages, Users, Tenants],
+  collections: [Pages, Users, Tenants, Media],
   // db: mongooseAdapter({
   //   url: process.env.DATABASE_URI as string,
   // }),
+  
   db: postgresAdapter({
     pool: {
       connectionString: process.env.POSTGRES_URL,
     },
   }),
-  onInit: async (args) => {
-    if (process.env.SEED_DB) {
-      await seed(args)
-    }
-  },
-  editor: lexicalEditor({}),
+  // onInit: async (args) => {
+  //   if (process.env.SEED_DB) {
+  //     await seed(args)
+  //   }
+  // },
+  editor: defaultLexical,
   graphQL: {
     schemaOutputFile: path.resolve(dirname, 'generated-schema.graphql'),
   },
@@ -44,6 +75,8 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+  cors: [getServerSideURL()].filter(Boolean),
+  globals: [Header, Footer],
   plugins: [
     multiTenantPlugin<Config>({
       collections: {

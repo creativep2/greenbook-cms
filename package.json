@@ -20,6 +20,8 @@
     "@payloadcms/db-postgres": "^3.25.0",
     "@payloadcms/next": "latest",
     "@payloadcms/plugin-multi-tenant": "latest",
+    "@payloadcms/plugin-search": "^3.37.0",
+    "@payloadcms/plugin-seo": "^3.37.0",
     "@payloadcms/richtext-lexical": "latest",
     "@payloadcms/ui": "latest",
     "cross-env": "^7.0.3",
