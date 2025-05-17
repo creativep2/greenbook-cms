@@ -61,6 +61,7 @@ export const Pages: CollectionConfig = {
     {
       name: 'title',
       type: 'text',
+      localized: true,
     },
     {
       type: 'tabs',
@@ -79,6 +80,7 @@ export const Pages: CollectionConfig = {
               admin: {
                 initCollapsed: true,
               },
+              localized: true,
             },
           ],
           label: 'Content',
@@ -94,12 +96,15 @@ export const Pages: CollectionConfig = {
             }),
             MetaTitleField({
               hasGenerateFn: true,
+              localized: true,
             }),
             MetaImageField({
               relationTo: 'media',
             }),
 
-            MetaDescriptionField({}),
+            MetaDescriptionField({
+              localized: true,
+            }),
             PreviewField({
               // if the `generateUrl` function is configured
               hasGenerateFn: true,
@@ -127,6 +132,7 @@ export const Pages: CollectionConfig = {
         beforeValidate: [ensureUniqueSlug],
       },
       index: true,
+      localized: true,
     },
   ],
   hooks: {

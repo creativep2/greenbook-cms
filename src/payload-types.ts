@@ -98,7 +98,7 @@ export interface Config {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
-  locale: null;
+  locale: 'en' | 'es' | 'fr' | 'de' | 'ar' | 'vi';
   user: User & {
     collection: 'users';
   };
@@ -211,6 +211,14 @@ export interface Tenant {
    * If checked, logging in is not required to read. Useful for building public pages.
    */
   allowPublicRead?: boolean | null;
+  /**
+   * Select which languages this tenant can use
+   */
+  supportedLocales?: ('en' | 'es' | 'fr' | 'de' | 'ar' | 'vi')[] | null;
+  /**
+   * Default language for this tenant
+   */
+  defaultLocale?: ('en' | 'es' | 'fr' | 'de' | 'ar' | 'vi') | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -220,6 +228,7 @@ export interface Tenant {
  */
 export interface Media {
   id: number;
+  tenant?: (number | null) | Tenant;
   alt?: string | null;
   caption?: {
     root: {
@@ -806,6 +815,8 @@ export interface TenantsSelect<T extends boolean = true> {
   domain?: T;
   slug?: T;
   allowPublicRead?: T;
+  supportedLocales?: T;
+  defaultLocale?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -814,6 +825,7 @@ export interface TenantsSelect<T extends boolean = true> {
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
+  tenant?: T;
   alt?: T;
   caption?: T;
   updatedAt?: T;

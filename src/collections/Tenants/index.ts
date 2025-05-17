@@ -47,5 +47,76 @@ export const Tenants: CollectionConfig = {
       defaultValue: false,
       index: true,
     },
+    {
+      name: 'supportedLocales',
+      type: 'select',
+      hasMany: true,
+      admin: {
+        description: 'Select which languages this tenant can use',
+        position: 'sidebar',
+      },
+      options: [
+        {
+          label: 'English',
+          value: 'en',
+        },
+        {
+          label: 'Spanish',
+          value: 'es',
+        },
+        {
+          label: 'French',
+          value: 'fr',
+        },
+        {
+          label: 'German',
+          value: 'de',
+        },
+        {
+          label: 'Arabic',
+          value: 'ar',
+        },
+        {
+          label: 'Vietnamese',
+          value: 'vi',
+        },
+      ],
+      defaultValue: ['en'],
+    },
+    {
+      name: 'defaultLocale',
+      type: 'select',
+      admin: {
+        description: 'Default language for this tenant',
+        position: 'sidebar',
+      },
+      options: [
+        {
+          label: 'English',
+          value: 'en',
+        },
+        {
+          label: 'Spanish',
+          value: 'es',
+        },
+        {
+          label: 'French',
+          value: 'fr',
+        },
+        {
+          label: 'German',
+          value: 'de',
+        },
+        {
+          label: 'Arabic',
+          value: 'ar',
+        },
+        {
+          label: 'Vietnamese',
+          value: 'vi',
+        },
+      ],
+      defaultValue: 'en',
+    },
   ],
 }

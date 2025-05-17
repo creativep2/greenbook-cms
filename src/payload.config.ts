@@ -18,6 +18,8 @@ import { Header } from './Header/config'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { Media } from './collections/Media'
+// Import translations
+import { enTranslations, esTranslations, frTranslations, deTranslations } from '@payloadcms/translations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -62,11 +64,11 @@ export default buildConfig({
       connectionString: process.env.POSTGRES_URL,
     },
   }),
-  // onInit: async (args) => {
-  //   if (process.env.SEED_DB) {
-  //     await seed(args)
-  //   }
-  // },
+  onInit: async (args) => {
+    if (process.env.SEED_DB) {
+      await seed(args)
+    }
+  },
   editor: defaultLexical,
   graphQL: {
     schemaOutputFile: path.resolve(dirname, 'generated-schema.graphql'),
@@ -77,10 +79,76 @@ export default buildConfig({
   },
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
+  // Add localization configuration
+  localization: {
+    locales: [
+      {
+        label: 'English',
+        code: 'en',
+      },
+      {
+        label: 'Spanish',
+        code: 'es',
+      },
+      {
+        label: 'French',
+        code: 'fr',
+      },
+      {
+        label: 'German',
+        code: 'de',
+      },
+      {
+        label: 'Arabic',
+        code: 'ar',
+        rtl: true,
+      },
+      {
+        label: 'Vietnamese',
+        code: 'vi',
+      },
+    ],
+    defaultLocale: 'en',
+    fallback: true,
+    // Filter available locales based on tenant configuration
+    filterAvailableLocales: async ({ req, locales }) => {
+      // For super admins, show all locales
+      if (isSuperAdmin(req.user)) {
+        return locales;
+      }
+      
+      // Get user's tenant IDs
+      const tenantIDs = getUserTenantIDs(req.user);
+      
+      if (tenantIDs.length > 0) {
+        // Get the first tenant for simplicity (you might want to improve this logic)
+        const tenant = await req.payload.findByID({
+          collection: 'tenants',
+          id: tenantIDs[0],
+        });
+        
+        // If tenant has supportedLocales field, filter by those
+        if (tenant && tenant.supportedLocales?.length) {
+          return locales.filter(locale => 
+            tenant.supportedLocales.includes(locale.code)
+          );
+        }
+      }
+      
+      // Default fallback - show all locales
+      return locales;
+    },
+  },
+  // Add i18n configuration for admin UI translations
+  i18n: {
+    // We'll load translations dynamically 
+    translationImportMode: 'dynamic',
+  },
   plugins: [
     multiTenantPlugin<Config>({
       collections: {
         pages: {},
+        media: {}, // Add media to multi-tenant plugin
       },
       tenantField: {
         access: {
