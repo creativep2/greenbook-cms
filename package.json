@@ -16,10 +16,12 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "latest",
     "@payloadcms/db-postgres": "^3.25.0",
     "@payloadcms/next": "latest",
+    "@payloadcms/payload-cloud": "^3.38.0",
+    "@payloadcms/plugin-form-builder": "^3.38.0",
     "@payloadcms/plugin-multi-tenant": "latest",
+    "@payloadcms/plugin-redirects": "^3.38.0",
     "@payloadcms/plugin-search": "^3.37.0",
     "@payloadcms/plugin-seo": "^3.37.0",
     "@payloadcms/richtext-lexical": "latest",
@@ -34,6 +36,7 @@
     "qs-esm": "7.0.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-hook-form": "^7.56.4",
     "sharp": "0.32.6"
   },
   "devDependencies": {

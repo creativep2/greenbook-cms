@@ -1,4 +1,4 @@
-// File: D:\Github\greenbook-cms\src\app\(payload)\layout.tsx
+// File: /Users/trangiakiet/Documents/GitHub/greenbook-cms/src/app/(payload)/layout.tsx
 import * as entry from '../../../../src/app/(payload)/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

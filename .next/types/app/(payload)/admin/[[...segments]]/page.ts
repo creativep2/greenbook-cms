@@ -1,4 +1,4 @@
-// File: D:\Github\greenbook-cms\src\app\(payload)\admin\[[...segments]]\page.tsx
+// File: /Users/trangiakiet/Documents/GitHub/greenbook-cms/src/app/(payload)/admin/[[...segments]]/page.tsx
 import * as entry from '../../../../../../src/app/(payload)/admin/[[...segments]]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

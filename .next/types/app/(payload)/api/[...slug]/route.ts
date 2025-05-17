@@ -1,4 +1,4 @@
-// File: D:\Github\greenbook-cms\src\app\(payload)\api\[...slug]\route.ts
+// File: /Users/trangiakiet/Documents/GitHub/greenbook-cms/src/app/(payload)/api/[...slug]/route.ts
 import * as entry from '../../../../../../src/app/(payload)/api/[...slug]/route.js'
 import type { NextRequest } from 'next/server.js'
 

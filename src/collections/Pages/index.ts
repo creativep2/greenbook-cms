@@ -64,6 +64,17 @@ export const Pages: CollectionConfig = {
       localized: true,
     },
     {
+      name: 'slug',
+      type: 'text',
+      defaultValue: '',
+      required: true,
+      hooks: {
+        beforeValidate: [ensureUniqueSlug],
+      },
+      index: true,
+      localized: true,
+    },
+    {
       type: 'tabs',
       tabs: [
         {
@@ -123,16 +134,6 @@ export const Pages: CollectionConfig = {
       admin: {
         position: 'sidebar',
       },
-    },
-    {
-      name: 'slug',
-      type: 'text',
-      defaultValue: 'home',
-      hooks: {
-        beforeValidate: [ensureUniqueSlug],
-      },
-      index: true,
-      localized: true,
     },
   ],
   hooks: {

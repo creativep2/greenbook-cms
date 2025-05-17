@@ -18,6 +18,7 @@ import { Header } from './Header/config'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { Media } from './collections/Media'
+import { plugins } from './plugins'
 // Import translations
 import { enTranslations, esTranslations, frTranslations, deTranslations } from '@payloadcms/translations'
 
@@ -145,6 +146,7 @@ export default buildConfig({
     translationImportMode: 'dynamic',
   },
   plugins: [
+    ...plugins,
     multiTenantPlugin<Config>({
       collections: {
         pages: {},
